@@ -19,11 +19,12 @@ public class ProjectTile : MonoBehaviour
 
     public void Launch(Vector2 direction, float force)
     {
-        rigidbody2d.AddForce(direction * force);
+        rigidbody2D.AddForce(direction * force);
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.
+        Debug.Log("Projectile CCollision with " + other.gameObject);
+        Destroy(gameObject);
     }
 }
