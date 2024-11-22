@@ -6,6 +6,7 @@ public class PlayControler : MonoBehaviour
 {
     public float speed = 3.0f;
     public int maxHealth = 5;
+    public GameObject projectilePrefab;
     public float TimeInvincible = 2.0f;
     public int health { get { return currentHealth; } }
     int currentHealth;
@@ -64,30 +65,40 @@ public class PlayControler : MonoBehaviour
             {
                 Debug.Log("Raycast has hit the object" + hit2D.collider.gameObject);
             }
-        
-                 void FixedUpdate()
-            {
-                Vector2 position = rigidbody2d.position;
-                position.x = position.x + speed * horizontal * Time.deltaTime;
-                position.y = position.y + speed * vertical * Time.deltaTime;
-                rigidbody2d.MovePosition(position);
-            }
-             void ChangeHealth(int amount)
-            {
-                if (amount < 0)
-                {
-                    animator.SetTrigger("Hit");
-
-                    if (isInvincible)
-                    {
-                        return;
-                    }
-                    isInvincible = true;
-                    invincibleTimer = TimeInvincible;
-                }
-                currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-                UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
-            }
         }
     }
+
+    void FixedUpdate()
+    {
+        Vector2 position = rigidbody2d.position;
+        position.x = position.x + speed * horizontal * Time.deltaTime;
+        position.y = position.y + speed * vertical * Time.deltaTime;
+        rigidbody2d.MovePosition(position);
+    }
+    public void ChangeHealth(int amount)
+    {
+        if (amount < 0)
+        {
+            animator.SetTrigger("Hit");
+
+            if (isInvincible)
+            {
+                return;
+            }
+            isInvincible = true;
+            invincibleTimer = TimeInvincible;
+        }
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
+    }
+    void Launch()
+    {
+        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+
+        ProjectTile projectile = projectileObject.GetComponent<ProjectTile>();
+        projectile.Launch(lookDirection, 300);
+
+        animator.SetTrigger("Launch");
+    }  
 }
+
