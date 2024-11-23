@@ -211,6 +211,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mask: {fileID: 1431935987}
+--- !u!1 &479891060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4851746839073140271, guid: e8cbd5f75ba570e46bf8fc16ccf7523a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5587238921961911344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &479891063
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479891060}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.20689598, y: -0.09453198}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.31, y: 0.98}
+    newSize: {x: 1.31, y: 0.98}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.896208, y: 0.79093605}
+  m_EdgeRadius: 0
 --- !u!4 &508629777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6243839675325549187, guid: 6bd54f2ec36051f40ae439c468598e59,
@@ -62974,12 +63025,12 @@ PrefabInstance:
     - target: {fileID: 6989311965631826216, guid: e8cbd5f75ba570e46bf8fc16ccf7523a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.18
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 6989311965631826216, guid: e8cbd5f75ba570e46bf8fc16ccf7523a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.23
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 6989311965631826216, guid: e8cbd5f75ba570e46bf8fc16ccf7523a,
         type: 3}
@@ -63024,7 +63075,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4851746839073140271, guid: e8cbd5f75ba570e46bf8fc16ccf7523a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 479891063}
   m_SourcePrefab: {fileID: 100100000, guid: e8cbd5f75ba570e46bf8fc16ccf7523a, type: 3}
 --- !u!1001 &5636303775414747735
 PrefabInstance:
